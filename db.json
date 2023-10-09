@@ -1,0 +1,79 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "name": "Ahmad",
+      "age": "22"
+    },
+    {
+      "id": 2,
+      "name": "Basel",
+      "age": "25"
+    },
+    {
+      "id": 3,
+      "name": "saad",
+      "age": "28"
+    },
+    {
+      "id": 4,
+      "name": "saad",
+      "age": "28"
+    },
+    {
+      "id": 5,
+      "name": "",
+      "age": ""
+    },
+    {
+      "id": 6,
+      "name": "ali",
+      "age": "15"
+    },
+    {
+      "id": 7,
+      "name": "saad",
+      "age": "31"
+    },
+    {
+      "id": 8,
+      "name": "saad",
+      "age": "15"
+    },
+    {
+      "id": 9,
+      "name": "saad",
+      "age": "28"
+    },
+    {
+      "id": 10,
+      "name": "saad",
+      "age": "28"
+    },
+    {
+      "id": 11,
+      "name": "ali",
+      "age": "15"
+    },
+    {
+      "id": 12,
+      "name": "saad",
+      "age": "28"
+    },
+    {
+      "id": 13,
+      "name": "khaled",
+      "age": "35"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

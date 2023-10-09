@@ -63,3 +63,16 @@ footer {
   width: 26rem;
   height: 25rem;
 }
+#div3 {
+  margin: 5rem 10rem;
+  font-size: 3rem;
+}
+#submit {
+  font-size: 2.8rem;
+}
+#div4 {
+  margin: 5rem 10rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
