@@ -1,21 +1,3 @@
-// async function render() {
-//   const card = document.getElementById("main");
-//   array2.map((n) => {
-//     const cardItem = document.createElement("div");
-//     cardItem.classList.add("card2");
-//     cardItem.innerHTML = `
-//       <img src="${n.Image}" class="img2">
-//       <div>Title:${n.Title}</div>
-//       <div>Price: ${n.Price}</div>
-//     `;
-//     card.appendChild(cardItem);
-//   });
-// }
-
-// fetchData().then(render);
-
-// ----------------------------------------------------------
-
 class Crud {
   constructor(title, price, image) {
     this.title = title;
