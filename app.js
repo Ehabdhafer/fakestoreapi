@@ -58,16 +58,69 @@ fetch("http://localhost:3000/posts")
     data2.forEach((post) => {
       const card = document.createElement("div");
       card.classList.add("card");
-
-      const name = document.createElement("h3");
-      name.textContent = post.name;
-
-      const age = document.createElement("p");
-      age.textContent = post.age;
-
-      card.appendChild(name);
-      card.appendChild(age);
-
+      card.innerHTML = `
+      <p>Name : ${post.name}</p>
+      <p>Age : ${post.age}</p>
+      <div class="div5">
+        <button class="button" id="${post.id}" onclick="update1">Update</button>
+        <button class="button" id="${post.id}" onclick="delete1">Delete</button>
+        </div>`;
       card3.appendChild(card);
     });
   });
+
+function updatepost(button) {
+  const postid = button.getAttribute("id");
+  const newpost = prompt("update the new data :", "");
+
+  if (newpost !== null) {
+    fetch(`http://localhost:3000/posts/${postid}`, {
+      method: "PUT",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({ name: newpost }),
+    }).then(() => {
+      fetch("http://localhost:3000/posts")
+        .then((res) => res.json())
+        .then((data2) => {
+          data2.forEach((post) => {
+            const card = document.createElement("div");
+            card.classList.add("card");
+            card.innerHTML = `
+      <p>Name : ${post.name}</p>
+      <p>Age : ${post.age}</p>
+      <div class="div5">
+        <button class="button" id="${post.id}" onclick="update1">Update</button>
+        <button class="button" id="${post.id}" onclick="delete1">Delete</button>
+        </div>`;
+            card3.appendChild(card);
+          });
+        });
+    });
+  }
+}
+
+function delete1(button) {
+  const postid = button.getAttribute("id");
+  fetch(`http://localhost:3000/posts/${postid}`, { method: "DELETE" }).then(
+    () => {
+      fetch("http://localhost:3000/posts")
+        .then((res) => res.json())
+        .then((data2) => {
+          data2.forEach((post) => {
+            const card = document.createElement("div");
+            card.classList.add("card");
+            card.innerHTML = `
+      <p>Name : ${post.name}</p>
+      <p>Age : ${post.age}</p>
+      <div class="div5">
+        <button class="button" id="${post.id}" onclick="update1">Update</button>
+        <button class="button" id="${post.id}" onclick="delete1">Delete</button>
+        </div>`;
+            card3.appendChild(card);
+          });
+        });
+    }
+  );
+}
